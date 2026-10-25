@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'atreyeek/sudoku-flask-cicd'
+        IMAGE_NAME = 'docker build -t yashvi24/sudoku-flask-cicd:v1 .'
         IMAGE_TAG = 'v1'
     }
 
