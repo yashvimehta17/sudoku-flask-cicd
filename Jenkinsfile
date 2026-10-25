@@ -3,7 +3,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'docker build -t yashvi24/sudoku-flask-cicd:v1 .'
+        IMAGE_NAME = 'yashvi24/sudoku-flask-cicd'
         IMAGE_TAG = 'v1'
     }
 
@@ -45,7 +45,9 @@ pipeline {
                         echo "$DOCKERHUB_TOKEN" | docker login \
                             --username "$DOCKERHUB_USER" \
                             --password-stdin
+
                         docker push ${IMAGE_NAME}:${IMAGE_TAG}
+
                         docker logout
                     '''
                 }
